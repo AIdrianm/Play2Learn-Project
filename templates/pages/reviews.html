@@ -2,6 +2,17 @@
 
 {% block title %}Reviews{% endblock %}
 {% block main %}
-  <h2>Game Reviews</h2>
-  <p>We review.</p>
-{% endblock %}
+  <h2>Display Reviews Here</h2>
+  <p>Insert ability to leave a review if user is logged in, otherwise show a link for user to follow to log in first</p>
+  <p>To leave a review first <a href="{% url 'pages:login' %}">Login</a></p>
+  <p> or should i just allow users to create a review right from the home page???</p>
+  {% endblock %}
+
+<!-- 
+  {% if user.is_authenticated %}
+     <--Show content for logged-in users -->
+    <!--<p>Welcome, {{ user.username }}!</p>
+{% else %}
+    <--Show content for non-logged-in users -->
+    <!--<p>Please log in to access this content.</p>
+{% endif %}-->

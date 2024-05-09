@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     "django.contrib.admin",
+    "django.contrib.admindocs",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     "games.apps.GamesConfig",
     "pages.apps.PagesConfig",
     "users.apps.UsersConfig",
+    "reviews.apps.ReviewsConfig",
 ]
 
 MIDDLEWARE = [
@@ -81,7 +83,7 @@ WSGI_APPLICATION = "play2learn.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'jokes',
+        'NAME': 'reviews',
         'USER': 'postgres',
         'PASSWORD': 'Blueduck19',
         'HOST': 'localhost',
@@ -107,8 +109,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-#AUTHENTIFICATION SETTINGS 
+# AUTHENTICATION SETTINGS
 AUTH_USER_MODEL = 'users.CustomUser'
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
