@@ -17,6 +17,11 @@
         <button type="send" id="send-btn" class="click btn-sm btn btn-success" value="Send">Send</button>
       </div>
     </div>
-  </div>
+  </div>     
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-success float-end">Apply</button>
+  </form>
 </main>
 {% endblock %}
