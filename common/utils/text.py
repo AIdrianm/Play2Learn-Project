@@ -12,11 +12,8 @@ def unique_slug(s, model, num_chars=50):
 
     """
 
-    slug=slugify(s)
-    slug=slug[:num_chars].strip('-')
-    """  ai suggestion to make it unique
-    while model.objects.filter(slug=slug).exists():
-        slug=slug[:num_chars-len(str(random.randint(0, 1000)))]+str(random.randint(0, 1000)) """
+    slug = slugify(s)
+    slug = slug[:num_chars].strip('-')
     while True:
         dup = model.objects.filter(slug=slug)
         if not dup:

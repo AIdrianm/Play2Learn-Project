@@ -1,3 +1,29 @@
-from django.shortcuts import render
+from django.urls import reverse_lazy
 
-# Create your views here.
+from django.views.generic import (
+    CreateView, DeleteView, DetailView, ListView, UpdateView
+)
+
+from .models import Review
+
+class ReviewCreateView(CreateView):
+    model = Review
+    fields = ['review']
+
+
+class ReviewDeleteView(DeleteView):
+    model = Review
+    success_url = reverse_lazy('reviews:list')
+
+
+class ReviewDetailView(DetailView):
+    model = Review
+
+
+class ReviewListView(ListView):
+    model = Review
+
+
+class ReviewUpdateView(UpdateView):
+    model = Review
+    fields = ['review',] 
