@@ -52,8 +52,9 @@ INSTALLED_APPS = [
     "pages.apps.PagesConfig",
     "users.apps.UsersConfig",
     "reviews.apps.ReviewsConfig",
+   
 ]
-
+ 
 SITE_ID = 1
 
 MIDDLEWARE = [
@@ -93,7 +94,7 @@ WSGI_APPLICATION = "play2learn.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'reviews',
+        'NAME': 'games',
         'USER': 'postgres',
         'PASSWORD': 'Blueduck19',
         'HOST': 'localhost',

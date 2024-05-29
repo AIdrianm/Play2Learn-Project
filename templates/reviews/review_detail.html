@@ -1,0 +1,15 @@
+{% extends "_base.html" %}
+
+{% block title %}Reviews{% endblock %}
+
+{% block main %}
+  <div class="card">
+    <div class="card-header">
+      <h2>{{ review.review }}</h2>
+      <small>by {{ review.user }} on {{ review.date_created }}</small>
+    </div>
+    <div class="card-body">
+      <p>{{ review.body }}</p>
+    </div>
+  </div>
+{% endblock %}

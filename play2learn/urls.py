@@ -23,10 +23,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # User Management
+    path('account/', include('users.urls')),
     path('account/', include('allauth.urls')),
 
     # Local Apps
     path('', include('pages.urls')),
     path('pages/', include('pages.urls')),
+    path('reviews/', include('reviews.urls')),
 ]
 

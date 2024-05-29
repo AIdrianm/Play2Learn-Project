@@ -46,6 +46,5 @@ class HomePageView(TemplateView):
 class LoginPageView(TemplateView):
     template_name = "pages/login.html"
 
-class ReviewsPageView(TemplateView):
-    template_name = "pages/reviews.html"
+
 

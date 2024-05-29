@@ -30,9 +30,7 @@
           </li>
          
         
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'pages:reviews' %}">Reviews</a>
-          </li>
+          
           {% if not user.is_authenticated %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'account_login' %}">Log in</a>
@@ -48,7 +46,9 @@
               Me
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">My Account</a>
+              <a class="dropdown-item" href="{% url 'my-account' %}">
+                My Account
+              </a>
               <div class="dropdown-divider"></div>
               <form method="post" action="{% url 'account_logout' %}">
                 {% csrf_token %}
@@ -72,9 +72,7 @@
       <a href="https://twitter.com" class="text-light"><i class="fab fa-twitter"></i></a>
       <a href=" https://facebook.com" class="text-light"><i class="fab fa-facebook"></i></a>
       {% if user.is_staff %}
-      <li class="nav-item">
-        <a class="nav-link" href="/admin/">Admin</a>
-      </li>
+        <a class="" href="/admin/">Admin</a
     {% endif %}
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>

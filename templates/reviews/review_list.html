@@ -5,9 +5,10 @@
   <h2>Reviews</h2>
   <ul class="list-group list-group-flush mb-3">
     {% for review in object_list %}
-      <li class="list-group-item">{{ review.review }}</li>
-      <a href="{% url 'reviews:update' review.slug %}" class="btn btn-info btn-sm float-end me-2">Update</a>
-      <a href="{% url 'reviews:delete' review.slug %}" class="btn btn-danger btn-sm float-end me-2">Delete</a>
+      <li class="list-group-item">{{ review.review }} by {{ review.user }} on {{ review.date_created }}
+      </li>
     {% endfor %}
   </ul>
 {% endblock %}
+
+
