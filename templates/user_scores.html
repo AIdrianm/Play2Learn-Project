@@ -1,0 +1,19 @@
+{% extends '_base_vue.html' %}
+
+{% block content %}
+<h1>Your Scores</h1>
+<table>
+    <tr>
+        <th>Game</th>
+        <th>Score</th>
+        <th>Date</th>
+    </tr>
+    {% for score in scores %}
+    <tr>
+        <td>{{ score.game.name }}</td>
+        <td>{{ score.score }}</td>
+        <td>{{ score.date }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
