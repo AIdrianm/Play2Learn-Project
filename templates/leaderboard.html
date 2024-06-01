@@ -1,7 +1,23 @@
-from django.urls import path
-from . import views
+{% extends '_base_vue.html' %}
 
-urlpatterns = [
-    path('leaderboard/<int:game_id>/', views.leaderboard, name='leaderboard'),
-    path('user-scores/', views.user_scores, name='user_scores'),
-]
+{% block content %}
+<h2>Leaderboard - {{ game_type }}</h2>
+<table>
+    <thead>
+        <tr>
+            <th>User</th>
+            <th>Score</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for entry in leaderboard %}
+        <tr>
+            <td>{{ entry.user.username }}</td>
+            <td>{{ entry.final_score }}</td>
+            <td>{{ entry.recorded_at }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,6 +1,8 @@
 from django.contrib.auth import get_user_model
 from django.urls import reverse_lazy
 from django.views.generic import UpdateView
+from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 
 from allauth.account.views import PasswordChangeView
 
@@ -16,3 +18,10 @@ class MyAccountPageView(UpdateView):
 
     def get_object(self):
         return self.request.user
+
+@login_required
+def account(request):
+    print("Account view called")
+    return render(request, 'account.html')
+
+    return render(request, 'account.html')

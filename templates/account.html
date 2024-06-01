@@ -1,0 +1,16 @@
+{% extends '_base_vue.html' %}
+
+{% block content %}
+<h2>My Account</h2>
+<p>Welcome, {{ user.username }}!</p>
+
+<ul>
+    <li><a href="{% url 'game_history' %}">View Game History</a></li>
+    <li><a href="{% url 'leaderboard' game_type='Math Facts Practice' %}">View Math Facts Leaderboard</a></li>
+    <li><a href="{% url 'leaderboard' game_type='Anagram Hunt' %}">View Anagram Hunt Leaderboard</a></li>
+</ul>
+
+<p>Debug: Account page is rendering.</p>
+
+<!-- Add any other account details or links here -->
+{% endblock %}

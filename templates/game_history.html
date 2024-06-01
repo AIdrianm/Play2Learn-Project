@@ -1,0 +1,25 @@
+{% extends '_base_vue.html' %}
+
+{% block content %}
+<h2>Game History</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Game Type</th>
+            <th>Game Settings</th>
+            <th>Final Score</th>
+            <th>Finished At</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for game in history %}
+        <tr>
+            <td>{{ game.game_type }}</td>
+            <td>{{ game.game_settings }}</td>
+            <td>{{ game.final_score }}</td>
+            <td>{{ game.finished_at }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
